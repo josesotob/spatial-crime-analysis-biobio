@@ -28,8 +28,8 @@ While the global test shows the overall trend, LISA identifies exactly where the
 | **LH (Low-High)** | **Chiguayante, Tomé** | **Outliers:** Areas with low crime despite being in high-crime zones. |
 | **HL (High-Low)** | **Mulchén** | **Outlier:** An isolated peak of high crime in a low-crime area. |
 
-<img width="1389" height="1289" alt="descargar (1)" src="https://github.com/user-attachments/assets/c34ea900-0070-45f4-a1bf-6faf4f30aa93" />
 
+<img width="1389" height="1289" alt="descargar (3)" src="https://github.com/user-attachments/assets/c4de98c8-b5aa-4755-9cc3-3d7d3689e544" />
 
 
 ## Strategic Analysis of Crime Clusters
