@@ -1,42 +1,54 @@
-# 📍 Spatial Crime Analysis - Biobío Region (2023)
+# Spatial Analysis of Crime: Biobío Region (2023)
 
-## 📖 Project Overview
-This project applies geostatistical techniques—commonly used in **Mining Engineering** for ore grade estimation—to urban safety data. The goal is to identify statistically significant clusters of high-impact social crimes in the Biobío Region, Chile, using data from 2023.
+Applied geostatistical project using techniques from the mining industry—specifically spatial autocorrelation—to analyze urban safety. This study identifies statistically significant crime clusters in the Biobío Region of Chile using 2023 social crime data.
 
----
-
-## 🛠️ Technologies Used
-* **Python 3.x**
-* **GeoPandas:** For spatial data manipulation.
-* **PySAL (esda):** For Moran's I and LISA statistics.
-* **Matplotlib/Seaborn:** For data visualization.
+## Project Framework
+The analysis was built using Python, leveraging **GeoPandas** for spatial data handling and **PySAL (esda)** for statistical testing.
 
 ---
 
-## 📊 1. Global Spatial Autocorrelation (Moran's I)
-We evaluated whether crime is randomly distributed or if it shows a geographic trend.
+## 1. Data Visualization: Choropleth Map
+Before running statistical tests, I mapped the raw `F2023` crime data. This visual inspection shows a clear concentration of high-impact crimes in urban centers compared to rural areas.
+<img width="1389" height="1267" alt="descargar" src="https://github.com/user-attachments/assets/c6a9c793-a25f-4269-a89b-df4fd75494bb" />
 
-> **Note:** The analysis identified a positive Moran's I coefficient of **0.1097** ($p\text{-value} = 0.069$). 
-> This indicates a positive spatial trend, suggesting that communes with similar crime 
-> rates tend to be geographically clustered. A random seed of **99** was used for reproducibility.
+## 2. Global Spatial Autocorrelation (Moran's I)
+To prove these patterns aren't just random, I calculated the Global Moran's I.
 
----
+> **Analysis Note:** The result was a positive coefficient of **0.1097** ($p\text{-value} = 0.069$). This confirms a positive spatial trend: communes with similar crime rates are geographically clustered. I used a random seed of **99** to ensure these results are reproducible.
+<img width="691" height="360" alt="descargar (2)" src="https://github.com/user-attachments/assets/466c0011-f50e-4b3e-9471-bca4b7f63c89" />
 
-## 🗺️ 2. Local Indicators of Spatial Association (LISA)
-While Moran's I gives a global average, LISA identifies the specific "Hot Spots" and "Cold Spots."
 
-| Cluster Type | Representative Communes | Description |
+## 3. Local Clusters (LISA)
+While the global test shows the overall trend, LISA identifies exactly where the "Hot Spots" and "Cold Spots" are.
+
+| Cluster Type | Communes | Context |
 | :--- | :--- | :--- |
-| **HH (High-High)** | **Talcahuano, Laja, Cabrero** | **Hot Spots:** Regional epicenters of criminal activity. |
+| **HH (High-High)** | **Talcahuano, Laja, Cabrero** | **Hot Spots:** Areas with high crime surrounded by high-crime neighbors. |
 | **LL (Low-Low)** | **Alto Biobío, Antuco, Quilaco** | **Cold Spots:** Statistically significant "safe zones." |
-| **LH (Low-High)** | **Chiguayante, Tomé** | **Spatial Outliers:** Lower crime despite high-crime neighbors. |
-| **HL (High-Low)** | **Mulchén** | **Spatial Outlier:** An isolated peak of high crime. |
+| **LH (Low-High)** | **Chiguayante, Tomé** | **Outliers:** Areas with low crime despite being in high-crime zones. |
+| **HL (High-Low)** | **Mulchén** | **Outlier:** An isolated peak of high crime in a low-crime area. |
+
+<img width="1389" height="1289" alt="descargar (1)" src="https://github.com/user-attachments/assets/c34ea900-0070-45f4-a1bf-6faf4f30aa93" />
+
+
+
+## Strategic Analysis of Crime Clusters
+
+The data reveals a stark urban-rural divide. While the global trend remains moderate ($p = 0.069$), the local clusters in **Greater Concepción** and the **Los Ángeles** corridor are statistically robust and warrant specific operational attention.
+
+### **Operational Insights & Resource Strategy**
+From an optimization perspective, these results provide a quantitative roadmap for regional resource allocation:
+
+> [!IMPORTANT]
+> **1. Targeted Intervention**
+> Security efforts and social programs should be prioritized in the **High-High clusters** (Talcahuano, Laja, and Cabrero). These areas represent the most concentrated crime loads in the region.
+
+> [!TIP]
+> **2. Staffing Efficiency**
+> The **Low-Low coldspots** in the cordillera zone (Alto Biobío, Antuco) suggest that current security levels are effective. This data supports a strategic reallocation of personnel to higher-need urban zones without compromising safety in these low-incidence areas.
+
+> [!NOTE]
+> **3. Outlier Investigation**
+> The cases of **Mulchén (HL)** and **Tomé (LH)** are geographic anomalies. These require further study to identify specific local variables—such as transit routes or localized economic shifts—that cause them to break the broader regional trend.
 
 ---
-
-## 💡 3. Discussion & Implications
-The analysis reveals a clear urban-rural divide. Crimes are concentrated in **Greater Concepción** and the **Los Ángeles** corridor. 
-
-* **Resource Optimization:** Policing and social programs should be prioritized in the HH clusters (Talcahuano, Laja).
-* **Strategic Allocation:** The LL coldspot in the cordillera allows for more efficient staffing by reallocating personnel to higher-need areas.
-* **Future Work:** Next steps include normalizing the data by population density (per capita rates) to refine the clustering results.
