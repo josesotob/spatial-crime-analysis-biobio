@@ -49,6 +49,6 @@ From an optimization perspective, these results provide a quantitative roadmap f
 
 > [!NOTE]
 > **3. Outlier Investigation**
-> The cases of **Mulchén (HL)** and **Tomé (LH)** are geographic anomalies. These require further study to identify specific local variables—such as transit routes or localized economic shifts—that cause them to break the broader regional trend.
+> The cases of **Mulchén (HL)** and **Tomé (LH)** are geographic anomalies. These require further study to identify specific local variables, such as transit routes or localized economic shifts that cause them to break the broader regional trend.
 
 ---
