@@ -1,6 +1,6 @@
 # Spatial Analysis of Crime: Biobío Region (2023)
 
-Applied geostatistical project using techniques from the mining industry—specifically spatial autocorrelation—to analyze urban safety. This study identifies statistically significant crime clusters in the Biobío Region of Chile using 2023 social crime data.
+Applied geostatistical project using techniques from the mining industry, specifically spatial autocorrelation—to analyze urban safety. This study identifies statistically significant crime clusters in the Biobío Region of Chile using 2023 social crime data.
 
 ## Project Framework
 The analysis was built using Python, leveraging **GeoPandas** for spatial data handling and **PySAL (esda)** for statistical testing.
